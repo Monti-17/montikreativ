@@ -9,6 +9,16 @@
   "author": "monti|kreativ - Mitchell Monti",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^4.0.2"
-  }
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Monti-17/montikreativ.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Monti-17/montikreativ/issues"
+  },
+  "homepage": "https://github.com/Monti-17/montikreativ#readme"
 }
