@@ -2,19 +2,81 @@
 body
   background-color: #000000
   margin: 0
+  color: #fff
+  font-family: fira-sans-2, sans-serif
+
 a
   text-decoration: none
   color: #fff
 
 #logo
-  height: 80vh
+  display: flex
+  height: 40vh
   width: 100vw
 
-#comingSoon
-  color: #fff
+#topimage
+  height: 50vh
+  width: 100vw
+  background-image: url("../images/topimage.png")
+  background-size: cover
+  display: flex
+  align-items: center
+
+#topGrid
+  height: 50vh
+  width: 100vw
+
+.button
+  width: 33%
+  height: 20%
+  backdrop-filter: blur(10px)
+  -webkit-backdrop-filter: blur(10px)
+  border-radius: 2em
   text-align: center
-  font-size: 2rem
-  font-family: fira-sans-2, sans-serif
-  font-weight: 400
-  font-style: normal
-  text-decoration: none
+  margin: auto
+  align-items: center
+  line-height: 9vh
+
+#photography
+  height: 50vh
+  width: 33.33vw
+  background-image: url("../images/photography.PNG")
+  background-size: cover
+  display: flex
+  align-items: center
+  margin: auto
+
+#design
+  height: 50vh
+  width: 33.33vw
+  background-image: url("../images/design.JPG")
+  background-size: cover
+  display: flex
+  align-items: center
+  margin: auto
+
+#web
+  height: 50vh
+  width: 33.33vw
+  background-image: url("../images/web.png")
+  background-size: cover
+  display: flex
+  align-items: center
+  margin: auto
+
+.row
+  display: flex
+  flex-wrap: wrap
+  padding: 0 0
+  align-items: center
+
+.column
+  flex: 33.33%
+  max-width: 33.33%
+  padding: 0 0
+  align: center
+
+.column img
+  margin-top: 0
+  vertical-align: middle
+  width: 100%
