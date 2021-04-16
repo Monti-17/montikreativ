@@ -1,75 +1,50 @@
-
-const autoprefixer = require('gulp-autoprefixer');
-const gulp = require('gulp');
+const { src, dest, watch, series } = require('gulp');
 const sass = require('gulp-sass');
-const rename = require('gulp-rename');
+const postcss = require('gulp-postcss');
+const cssnano = require('cssnano');
+const terser = require('gulp-terser');
+const browsersync = require('browser-sync').create();
 
+// Sass Task
+function scssTask(){
+  return src('app/scss/style.sass', { sourcemaps: true })
+    .pipe(sass())
+    .pipe(postcss([cssnano()]))
+    .pipe(dest('dist', { sourcemaps: '.' }));
+}
 
-const paths = {
-    'styles': {
-        'base': 'app/scss/',
-        'src': 'app/scss/style.sass',
-        'dest': 'app/css/',
-        'watch': 'app/scss/**/*.+(sass|scss)',
-    },
-    'scripts': {
-        'base': 'app/js/',
-        'src': 'app/js/**/*.js',
-        'dest': 'app/js/',
-        'watch': 'app/js/**/*.js',
-    },
-};
+// JavaScript Task
+function jsTask(){
+  return src('app/js/script.js', { sourcemaps: true })
+    .pipe(terser())
+    .pipe(dest('dist', { sourcemaps: '.' }));
+}
 
-const styles = function () {
-    const plugins = [
-        autoprefixer(),
-    ];
+// Browsersync Tasks
+function browsersyncServe(cb){
+  browsersync.init({
+    server: {
+      baseDir: '.'
+    }
+  });
+  cb();
+}
 
-    return gulp.src(
-        paths.styles.src,
-        {
-            'base': paths.styles.base,
-        }
-    ).
-        pipe(sass().on(
-            'error',
-            sass.logError
-        )).
-        pipe(rename({
-            'basename': 'styles',
-            'suffix': '.min',
-        })).
-        pipe(gulp.dest(paths.styles.dest));
-};
+function browsersyncReload(cb){
+  browsersync.reload();
+  cb();
+}
 
-const scripts = function () {
-    return gulp.src(
-        paths.scripts.src,
-        {
-            'base': paths.scripts.base,
-        }
-    ).
-        pipe(rename({
-            'suffix': '.min',
-        })).
-        pipe(gulp.dest(paths.scripts.dest));
-};
+// Watch Task
+function watchTask(){
+  watch('*.html', browsersyncReload);
+  watch(['app/scss/**/*.+(sass|scss)', 'app/js/**/*.js'], series(scssTask, jsTask, browsersyncReload));
+}
 
-const watch = function () {
-    gulp.watch(
-        paths.scripts.watch,
-        scripts
-    );
-    gulp.watch(
-        paths.styles.watch,
-        styles
-    );
-};
-
-const build = gulp.parallel(
-    styles,
-    scripts,
-    gulp.series(watch)
+// Default Gulp task
+exports.default = series(
+  scssTask,
+  jsTask,
+  browsersyncServe,
+  watchTask
 );
-
-exports.default = build;
