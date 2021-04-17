@@ -10,37 +10,45 @@
   <meta name="author" content="monti|kreativ">
   <title>monti | kreativ</title>
   <link rel="icon" type="image/png" href="app/images/favicon.png" />
-  <link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="app/images/apple-touch-icon-152x152.png">
   <link rel="stylesheet" href=dist/style.css>
   <link rel="stylesheet" href="https://use.typekit.net/yho6zdn.css">
   <script src="https://kit.fontawesome.com/f04367806d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <div>
-    <div id="topimage">
-      <img id="logo" src="app/images/mklogo.svg" alt="logo">
-      <a> </a>
+  <div class="fullScreen">
+      <div id="topimage">
+        <img id="logo" src="app/images/mklogo.svg" alt="logo">
+        <a> </a>
+      </div>
+    <div id="topGrid">
+      <div class="row">
+        <div class="column" id="photography">
+          <div class="button">
+            <a href="#">photography</a>
+          </div>
+        </div>
+        <div class="column" id="design">
+          <div class="button">
+            <a href="#">graphic design</a>
+          </div>
+        </div>
+        <div class="column" id="web">
+          <div class="button">
+            <a href="#">web design</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div id="topGrid">
-    <div class="row">
-      <div class="column" id="photography">
-        <div class="button">
-          <a href="#">photography</a>
-        </div>
-      </div>
-      <div class="column" id="design">
-        <div class="button">
-          <a href="#">graphic design</a>
-        </div>
-      </div>
-      <div class="column" id="web">
-        <div class="button">
-          <a href="#">web design</a>
-        </div>
-      </div>
-    </div>
+  <div class="smallTransition" id="portfolioTransition">
+    <p>scroll down</p>
   </div>
+  <div id="portfolio">
+      <h1>portfolio</h1>
+      <img class="sectionUnderline" src="app/images/whiteunderline.svg" alt="underline">
+    </div>
 </body>
+
 </html>

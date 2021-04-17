@@ -1,20 +1,73 @@
-$menuFont: fira-sans-2, sans-serif, 5rem
+//variables for site-wide themes and styling
+$font-stack:  fira-sans-2, sans-serif
+$primary-color: white
+$base-color: black
+$heading-size: 7rem
+$sub-heading-size: 2rem
+$full-width: 100vw
+$half-width: 50vw
+$third-width: 33.33vw
+$full-height: 100vh
+$half-height: 50vh
+$third-height: 33.33vh
 
+
+//set all defaults to normal font-weight
+h1, h2, h3, h4, h5, h6
+  font-weight: normal
 
 body
-  background-color: #000000
+  background-color: $base-color
   margin: 0
-  color: #fff
+  color: $primary-color
   font-family: fira-sans-2, sans-serif
 
 a
   text-decoration: none
-  color: #fff
+  color: $primary-color
 
 #logo
   display: flex
   height: 40vh
+  width: $full-width
+
+.fullScreen
+  width: $full-width
+  height: 100vh
+
+.smallTransition
+  min-height: $third-height
+  width: $full-width
+  text-align: center
+  p
+    margin: auto
+    margin-top: 1vw
+    font-size: $sub-heading-size
+    line-height: $third-height
+
+#portfolioTransition
+    background-image: url("/../app/images/topimage.png")
+
+#portfolio
+  width: $full-width
+  height: 20vw
+  position: absolute
+  h1
+    font-family: $font-stack
+    font-size: $heading-size
+    padding-left: 5vw
+    line-height: 1vw
+  img
+    padding-left: 5vw
+
+
+
+.largeTransition
   width: 100vw
+  height: 40vw
+
+.sectionUnderline
+  width: 20vw
 
 #topimage
   height: 50vh
@@ -27,17 +80,20 @@ a
 #topGrid
   height: 50vh
   width: 100vw
-  font: $menuFont
 
 .button
-  width: 33%
+  width: relative
+  height: relative
   backdrop-filter: blur(10px)
   -webkit-backdrop-filter: blur(10px)
   border-radius: 2em
   text-align: center
   margin: auto
   align-items: center
-  line-height: 9vh
+  line-height: relative
+  padding: 0 1vw 0.75vw 1vw
+  a
+    font-size: $sub-heading-size
 
 #photography
   height: 50vh
