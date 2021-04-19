@@ -4,6 +4,7 @@
   "description": "monti|kreativ first website",
   "main": "gulpfile.js",
   "dependencies": {
+    "animate.css": "^4.1.1",
     "autoprefixer": "^10.2.5",
     "chokidar": "^2.1.8",
     "gulp-rename": "^2.0.0",
@@ -11,10 +12,13 @@
   },
   "devDependencies": {
     "browser-sync": "^2.26.14",
+    "cssnano": "^5.0.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "7.0.1",
+    "gulp-postcss": "^9.0.0",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.1.0"
+    "gulp-sass": "^4.1.0",
+    "gulp-terser": "^2.0.1"
   },
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1"

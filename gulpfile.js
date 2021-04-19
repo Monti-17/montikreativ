@@ -15,7 +15,7 @@ function scssTask(){
 
 // JavaScript Task
 function jsTask(){
-  return src('app/js/script.js', { sourcemaps: true })
+  return src('app/js/**/*.js', { sourcemaps: true })
     .pipe(terser())
     .pipe(dest('dist', { sourcemaps: '.' }));
 }
