@@ -14,6 +14,9 @@
   <link rel="stylesheet" href=dist/style.css>
   <link rel="stylesheet" href="https://use.typekit.net/yho6zdn.css">
   <script src="https://kit.fontawesome.com/f04367806d.js" crossorigin="anonymous"></script>
+  <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>-->
+  <script src=dist/script.js></script>
+  <script src=dist/jquery-2.1.0.min.js></script>
 </head>
 
 <body>
@@ -47,28 +50,33 @@
         <div class="row">
           <div class="column" id="photography">
             <div class="button">
-              <i class="fas fa-camera-retro fa-10x" data-fa-mask="fas fa-camera-retro"></i>
-              <a href="#">photography</a>
+              <i class="fas fa-camera-retro fa-10x" data-fa-mask="fas fa-camera-retro">
+                <a href="#">photography</a>
+              </i>
             </div>
           </div>
           <div class="column" id="design">
             <div class="button">
-              <i class="fas fa-pencil-ruler fa-10x" data-fa-mask="fas fa-pencil-ruler"></i>
-              <a href="#">graphic design</a>
+              <i class="fas fa-pencil-ruler fa-10x" data-fa-mask="fas fa-pencil-ruler" href="#">
+                <a href="#">graphic design</a>
+              </i>
             </div>
           </div>
           <div class="column" id="web">
             <div class="button">
-              <i class="fas fa-laptop-code fa-10x" data-fa-mask="fas fa-laptop-code"></i>
-              <a href="#">web design</a>
+              <i class="fas fa-laptop-code fa-10x" data-fa-mask="fas fa-laptop-code">
+                <a href="#">web design</a>
+              </i>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="smallTransition" id="portfolioTransition">
-      <p>scroll down</p>
-      <img src="app/images/caret.svg" alt="underline">
+    <section class="smallTransition" id="firstTransition" data-type="background" data-speed="10">
+      <article>
+        <p>scroll down</p>
+        <p><img src="app/images/caret.svg" alt="down arrow"></p>
+      </article>
     </section>
     <section id="portfolio">
       <h1>portfolio</h1>

@@ -8,10 +8,19 @@ $link-size: 1.5rem
 $full-width: 100vw
 $half-width: 50vw
 $third-width: 33.33vw
+$quarter-width: 25vw
 $full-height: 100vh
 $half-height: 50vh
 $third-height: 33.33vh
+$quarter-height: 25vh
 $linktransition: all .5s cubic-bezier(1,.25,0,.75) 0s
+//image links
+$header-image: url("/../app/images/topimage.png")
+$firstTransition-image: url("/../app/images/topimage.png")
+$photography-image: url("/../app/images/photography.png")
+$design-image: url("/../app/images/design.JPG")
+$webDesign-image: url("/../app/images/web.png")
+
 
 
 //set all defaults to normal font-weight
@@ -42,7 +51,7 @@ a
 #navbar
   position: fixed
   z-index: 100
-  //display: none
+  display: none
   top: 0vw
   float: right
   padding-right: 2vw
@@ -71,7 +80,6 @@ a
   font-size: $link-size
   vertical-align: middle
 
-
 .fullScreen
   width: $full-width
   height: 100vh
@@ -80,22 +88,31 @@ a
   min-height: $third-height
   width: $full-width
   text-align: center
-  p
-    margin: auto
-    margin: 1vw 0 -2vw
-    font-size: $sub-heading-size
-    line-height: $third-height
 
-#portfolioTransition
-  background-image: url("/../app/images/topimage.png")
+#firstTransition
+  background: $firstTransition-image 50% 0 repeat fixed
+  min-height: $third-height
+  position: relative
+  background-size: cover
   img
     height: 2vw
-    padding-bottom: 3vw
-    margin-top: -6vw
+    position: flex
+    margin: 0 0 14vh
+
+  article
+    position: absolute
+    text-align: center
+    width: $full-width
+    line-height: $third-height
+  p
+    margin: -4vh auto -7vh auto
+    font-size: $sub-heading-size
+
+
 
 #portfolio
   width: $full-width
-  height: 20vw
+  height: 120vw
   position: absolute
   h1
     font-family: $font-stack
@@ -115,7 +132,7 @@ a
 #topimage
   height: 50vh
   width: 100vw
-  background-image: url("/../app/images/topimage.png")
+  background-image: $header-image
   background-size: cover
   display: flex
   align-items: center
@@ -137,62 +154,84 @@ a
     font-size: $sub-heading-size
 
 #photography
-  height: 50vh
-  width: 33.33vw
+  height: $half-height
+  width: $third-width
   backdrop-filter: blur(2px)
   -webkit-backdrop-filter: blur(2px)
-  background-image: url("/../app/images/photographybg.png")
+  filter: brightness(0.5)
+  background-image: $photography-image
   background-size: cover
   display: flex
   align-items: center
   margin: auto
-  i, a
+  i
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent
-    backdrop-filter: blur(2px)
-    -webkit-backdrop-filter: blur(2px)
-    background-image: url("/../app/images/photography.png")
+    background-image: $photography-image
     background-size: 43.3vw
     background-position: -9vw
-    line-height: $half-height
-    font-weight: bold
-    ::before
-      content: "photography"
+    text-align: -webkit-center
+    padding-top: 10vh
+  a
+    font-size: 3rem
+    font-family: fira-sans-condensed, sans-serif
+    font-weight: 400
+    display: -webkit-box
+    line-height: initial
+
 
 #design
   height: $half-height
   width: $third-width
+  backdrop-filter: blur(2px)
+  -webkit-backdrop-filter: blur(2px)
+  filter: brightness(0.5)
+  background-image: $design-image
   background-size: cover
-  background-image: url("/../app/images/designbg.png")
   display: flex
   align-items: center
   margin: auto
   i
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent
-    background-image: url("/../app/images/design.JPG")
-    background-size: 33.3vw
+    background-image: $design-image
+    background-size: 43.3vw
     background-position: -9vw
-    line-height: $half-height
+    text-align: -webkit-center
+    padding-top: 10vh
   a
-    display: block
+    font-size: 3rem
+    font-family: fira-sans-condensed, sans-serif
+    font-weight: 400
+    display: -webkit-box
+    line-height: initial
+
+
 #web
   height: $half-height
   width: $third-width
+  backdrop-filter: blur(2px)
+  -webkit-backdrop-filter: blur(2px)
+  filter: brightness(0.5)
+  background-image: $webDesign-image
   background-size: cover
-  background-image: url("/../app/images/webbg.png")
   display: flex
   align-items: center
   margin: auto
   i
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent
-    backdrop-filter: blur(2px)
-    -webkit-backdrop-filter: blur(2px)
-    background-image: url("/../app/images/web.png")
+    background-image: $webDesign-image
     background-size: 43.3vw
     background-position: -9vw
-    line-height: $half-height
+    text-align: -webkit-center
+    padding-top: 10vh
+  a
+    font-size: 3rem
+    font-family: fira-sans-condensed, sans-serif
+    font-weight: 400
+    display: -webkit-box
+    line-height: initial
 
 .row
   display: flex
