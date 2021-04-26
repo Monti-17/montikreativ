@@ -14,43 +14,54 @@
   <link rel="stylesheet" href=dist/style.css>
   <link rel="stylesheet" href="https://use.typekit.net/yho6zdn.css">
   <script src="https://kit.fontawesome.com/f04367806d.js" crossorigin="anonymous"></script>
-  <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src=dist/script.js></script>
-  <script src=dist/jquery-2.1.0.min.js></script>
 </head>
 
 <body>
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" viewBox="0 0 100 100">
+    <defs>
+      <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#7eab29" />
+        <stop offset="100%" stop-color="#3b5998" />
+      </linearGradient>
+      <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#7eab29" />
+        <stop offset="100%" stop-color="#3b5998" />
+      </linearGradient>
+    </defs>
+  </svg>
+  <nav>
+    <ul id="menu" class="c-nav underliner">
+      <img id="menulogo" src="app/images/menulogo.svg" alt="">
+      <li class="c-nav__item">
+        <span class="menuitems"><a href="#portfolio">portfolio</a></span>
+      </li>
+      <li class="c-nav__item">
+        <span class="menuitems"><a href="#about">about</a></span>
+      </li>
+      <li class="c-nav__item">
+        <span class="menuitems"><a href="#contact">contact</a></span>
+      </li>
+      <li id="facebook">
+        <a href="https://facebook.com/montikreativ1" target="/" class="menuitems fab fa-facebook-f"></a>
+      </li>
+      <li id="instagram">
+        <a href="https://instagram.com/montikreativ" class="menuitems fab fa-instagram"></a>
+      </li>
+    </ul>
+  </nav>
+
   <main class="wrapper">
-    <nav id="navbar">
-      <ul id="menu">
-        <img id="menulogo" src="app/images/menulogo.svg" alt="">
-        <li>
-          <span class="menuitems"><a href="#portfolio">portfolio</a></span>
-        </li>
-        <li>
-          <span class="menuitems"><a href="#about">about</a></span>
-        </li>
-        <li>
-          <span class="menuitems"><a href="#contact">contact</a></span>
-        </li>
-        <li>
-          <a href="https://facebook.com/montikreativ1" target="/" class="menuitems fab fa-facebook-f"></a>
-        </li>
-        <li>
-          <a href="https://instagram.com/montikreativ" class="menuitems fab fa-instagram"></a>
-        </li>
-      </ul>
-    </nav>
     <section class="fullScreen">
       <div id="topimage">
         <img id="logo" src="app/images/mklogo.svg" alt="logo">
-        <a> </a>
       </div>
       <div id="topGrid">
         <div class="row">
           <div class="column" id="photography">
             <div class="button">
-              <i class="fas fa-camera-retro fa-10x" data-fa-mask="fas fa-camera-retro">
+              <i class="fas fa-camera-retro fa-10x" data-fa-mask="fas fa-camera-retro" href="#portfolio">
                 <a href="#">photography</a>
               </i>
             </div>
@@ -81,8 +92,18 @@
     <section id="portfolio">
       <h1>portfolio</h1>
       <img class="sectionUnderline" src="app/images/whiteunderline.svg" alt="underline">
+      <svg width="509px" height="549px" viewBox="0 0 509 549" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Path">
+            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+            <use fill="#6DD400" fill-rule="evenodd" xlink:href="#path-2"></use>
+            <use stroke="#979797" stroke-width="1" fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+          </g>
+        </g>
+      </svg>
     </section>
   </main>
+  <script src="dist/underline.js"></script>
 </body>
 
 </html>

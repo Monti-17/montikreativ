@@ -1,10 +1,19 @@
-//variables for site-wide themes and styling
+/*variables for site-wide themes and styling*/
+
+//
 $font-stack:  fira-sans-2, sans-serif
-$primary-color: white
-$base-color: black
 $heading-size: 7rem
 $sub-heading-size: 2rem
 $link-size: 1.5rem
+
+//colour theme
+$color-primary: white
+$color-accent: lightgrey
+$color-base: black
+$color-link: #7eab29
+$color-facebook: #3b5998
+
+//widths to keep everything on a grid
 $full-width: 100vw
 $half-width: 50vw
 $third-width: 33.33vw
@@ -13,13 +22,16 @@ $full-height: 100vh
 $half-height: 50vh
 $third-height: 33.33vh
 $quarter-height: 25vh
-$linktransition: all .5s cubic-bezier(1,.25,0,.75) 0s
+
 //image links
 $header-image: url("/../app/images/topimage.png")
 $firstTransition-image: url("/../app/images/topimage.png")
 $photography-image: url("/../app/images/photography.png")
 $design-image: url("/../app/images/design.JPG")
 $webDesign-image: url("/../app/images/web.png")
+
+//transition for smooth fades on links
+$linktransition: all .5s cubic-bezier(1,.25,0,.75) 0s
 
 
 
@@ -28,14 +40,14 @@ h1, h2, h3, h4, h5, h6
   font-weight: normal
 
 body
-  background-color: $base-color
+  background-color: $color-base
   margin: 0
-  color: $primary-color
+  color: $color-primary
   font-family: fira-sans-2, sans-serif
 
 a
   text-decoration: none
-  color: $primary-color
+  color: $color-primary
 
 .wrapper
   height: $full-height
@@ -48,10 +60,9 @@ a
   height: 40vh
   width: $full-width
 
-#navbar
+nav
   position: fixed
   z-index: 100
-  display: none
   top: 0vw
   float: right
   padding-right: 2vw
@@ -61,21 +72,76 @@ a
 
 #menu
   display: flex
-  margin-top: 0
+  margin: 0
   list-style-type: none
   text-decoration: none
-  line-height: 10vw
 
 #menulogo
   filter: invert(100%)
   height: 10vw
-  padding: 1vw 45vw 0 1vw
+  padding: 1vw 45vw 1vw 1vw
   display: inline-block
+
+svg
+	display: block
+
+.c-nav__item
+	a
+		display: inline-block
+		text-decoration: none
+		color: $color-primary
+		transition: $linktransition
+	svg
+		pointer-events: none
+        transition: $linktransition
+        outline: solid 1px $color-accent
+	path
+    transition: stroke-dasharray 0.5s, stroke-dashoffset 0.5s, opacity 0.5s
+    &:last-child
+      opacity: 0.2
+	a
+		&:hover,
+		&:focus
+			color: $color-link
+	a:hover + svg,
+	a:focus + svg
+		opacity: 1
+		path
+			stroke-dashoffset: 0
+
+#facebook
+	a
+		display: inline-block
+		text-decoration: none
+		color: $color-primary
+		transition: $linktransition
+	a
+		&:hover,
+		&:focus
+			color: $color-facebook
+
+#instagram
+	a
+		display: inline-block
+    background: -webkit-linear-gradient($color-link , $color-facebook)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    background: linear-gradient($color-link , $color-facebook)
+    background-clip: text
+    text-fill-color: transparent
+    transition: $linktransition
+		&:hover,
+		&:focus
+      background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+      -webkit-background-clip: text
+      background-clip: text
+      -webkit-text-fill-color: transparent
+      transition: $linktransition
 
 .menuitems
   display: inline-block
   padding-right: 0
-  padding-left: 2vw
+  margin-left: 2vw
   letter-spacing: .2vw
   font-size: $link-size
   vertical-align: middle
@@ -94,8 +160,10 @@ a
   min-height: $third-height
   position: relative
   background-size: cover
+  position: relative
+  z-index: -99
   img
-    height: 2vw
+    height: 2rem
     position: flex
     margin: 0 0 14vh
 

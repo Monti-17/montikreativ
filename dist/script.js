@@ -1,2 +1,2 @@
-$(document).ready((function(){var n=$(window);$('section[data-type="background"]').each((function(){var o=$(this);$(window).scroll((function(){var t="50% "+-n.scrollTop()/o.data("speed")+"px";o.css({backgroundPosition:t})}))}))}));var viewportHeight=$(window).height();!function(n){n(document).ready((function(){n(window).scroll((function(){n(this).scrollTop()>viewportHeight?n("#navbar").fadeIn(200):n("#navbar").fadeOut(200)}))}))}(jQuery);
+var viewportHeight=$(window).height();$(document).ready((function(){$(".wrapper").scroll((function(){$(this).scrollTop()>viewportHeight?$("nav, svg").fadeIn("easing"):$("nav, svg").fadeOut("easing")}))}));
 //# sourceMappingURL=script.js.map
