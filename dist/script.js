@@ -1,2 +1,2 @@
-var viewportHeight=$(window).height();$(document).ready((function(){$(".wrapper").scroll((function(){$(this).scrollTop()>viewportHeight?$("nav, svg").fadeIn("easing"):$("nav, svg").fadeOut("easing")}))}));
+var viewportHeight=$(window).height();$(document).ready((function(){$("nav").hide(),$(".wrapper").scroll((function(){$(this).scrollTop()>viewportHeight?$("nav").fadeIn("easing"):$("nav").fadeOut("easing")}))}));
 //# sourceMappingURL=script.js.map
