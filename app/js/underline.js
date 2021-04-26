@@ -1,3 +1,5 @@
+var vw = $(window).width()/100; // == 100vw
+
 class Underliner {
     constructor(selector, color1, color2, thickness1, thickness2, strokeLinecap, rtl) {
         this.links = document.querySelectorAll(selector)
@@ -27,7 +29,7 @@ class Underliner {
         path.setAttribute("d", pathD);
         path.setAttribute("fill", this.fill);
         path.setAttribute("stroke", color);
-        path.setAttribute("stroke-width", thickness);
+        path.setAttribute("stroke-width", vw/5);
         path.setAttribute("stroke-linecap", strokeLinecap);
         path.setAttribute("stroke-dasharray", path.getTotalLength() + 10);
         path.setAttribute("stroke-dashoffset", path.getTotalLength() + 10);
