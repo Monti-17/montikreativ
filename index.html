@@ -52,7 +52,6 @@
       </li>
     </ul>
   </nav>
-
   <main class="wrapper">
     <section class="fullScreen">
       <div id="topimage">
@@ -72,6 +71,7 @@
               <i class="fas fa-pencil-ruler fa-10x" data-fa-mask="fas fa-pencil-ruler" href="#">
                 <a href="#">graphic design</a>
               </i>
+              <p id="caret"><img src="app/images/caret.svg" alt="down arrow"></p>
             </div>
           </div>
           <div class="column" id="web">
@@ -84,18 +84,28 @@
         </div>
       </div>
     </section>
-    <section class="smallTransition" id="firstTransition" data-type="background" data-speed="10">
-      <article>
-        <p>scroll down</p>
-        <p><img src="app/images/caret.svg" alt="down arrow"></p>
-      </article>
-    </section>
-    <section id="portfolio">
+    <section class="smallTransition" id="portfolioTransition" data-paroller-factor="0.5">
       <h1>portfolio</h1>
       <img class="sectionUnderline" src="app/images/whiteunderline.svg" alt="underline">
     </section>
+    <section>
+      <div data-paroller-factor="0.9" data-paroller-type="background" data-paroller-direction="vertical">
+          <div>
+              <img src="app/images/topimage.png" style="{position: absolute;}">
+              <div>
+                  <h4>Card vertical</h4>
+                  <p>just a div</p>
+              </div>
+          </div>
+      </div>
+    </section>
   </main>
   <script src="dist/underline.js"></script>
+  <script src="dist/jquery.paroller.min.js"></script>
+  <script>
+      $(function () {
+         $(window).paroller();
+      });
+  </script>
 </body>
-
 </html>

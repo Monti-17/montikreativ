@@ -129,6 +129,13 @@ svg
 		&:focus
 			color: $color-facebook
 
+#caret
+  display: flex
+  margin: 4vh auto
+  img
+  height: 3rem
+  width: 3rem
+
 #instagram
 	a
 		&:hover,
@@ -146,35 +153,10 @@ svg
 .smallTransition
   min-height: $third-height
   width: $full-width
-  text-align: center
 
-#firstTransition
+#portfolioTransition
   background: $firstTransition-image 50% 0 repeat fixed
-  min-height: $third-height
-  position: relative
-  background-size: cover
-  position: relative
-  z-index: -99
-  img
-    height: 2rem
-    position: flex
-    margin: 0 0 14vh
-
-  article
-    position: absolute
-    text-align: center
-    width: $full-width
-    line-height: $third-height
-  p
-    margin: -4vh auto -7vh auto
-    font-size: $sub-heading-size
-
-
-
-#portfolio
-  width: $full-width
-  height: 120vw
-  position: absolute
+  display: flow-root
   h1
     font-family: $font-stack
     font-size: $heading-size
@@ -182,6 +164,10 @@ svg
     line-height: 1vw
   img
     padding-left: 5vw
+
+#portfolio
+  width: $full-width
+  height: 120vw
 
 .largeTransition
   width: 100vw

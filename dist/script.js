@@ -1,2 +1,2 @@
-var viewportHeight=$(window).height();$(document).ready((function(){$("nav").hide(),$(".wrapper").scroll((function(){$(this).scrollTop()>viewportHeight?$("nav").fadeIn("easing"):$("nav").fadeOut("easing")}))}));
+var viewportHeight=$(window).height();$(document).ready((function(){$("nav").hide(),$(".wrapper").scroll((function(){$(this).scrollTop()>viewportHeight?$("nav").fadeIn("easing"):$("nav").fadeOut("easing")}))})),$("#firstTransition").paroller(),$("#transitionArticle").paroller({factor:.5,factorXs:.2,factorSm:.3,type:"foreground",direction:"horizontal"});
 //# sourceMappingURL=script.js.map
